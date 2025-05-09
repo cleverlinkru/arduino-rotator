@@ -20,6 +20,9 @@ declare module 'vite/client' {
     }
 }
 
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/reset.css';
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
@@ -29,6 +32,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(Antd)
             .mount(el);
     },
     progress: {
